@@ -74,6 +74,7 @@ else
         var response = await Http.PostAsJsonAsync<CreateShoppingCartItem>("api/CreateShoppingCartItem", itemCreate);
         if (response.IsSuccessStatusCode)
         {
+            itemCreate = new CreateShoppingCartItem();
             await OnInitializedAsync();
         }
     }
